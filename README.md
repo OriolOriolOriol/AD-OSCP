@@ -1,5 +1,5 @@
 
-# Attack Privilege Requirements
+# Attack Privilege Requirements Summary
 - Kerbrute Enumeration
 	- No domain access required 
 
@@ -20,6 +20,9 @@
 
 - Skeleton Key
 	- Full domain compromise (domain admin) required
+
+- Bruteforce with kerbrute
+
 
 # Enumeration
 
