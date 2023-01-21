@@ -329,4 +329,16 @@
 # Kerbrute
 ### Bruteforce di username e password per ottenere delle credenziali
 
-python3 kecer.py 
+With [kerbrute.py](https://github.com/TarlogicSecurity/kerbrute):
+```shell
+./kerbrute -domain <domain_name> -users <users_file> -passwords <passwords_file> -outputfile <output_file>
+```
+
+With [Rubeus](https://github.com/Zer1t0/Rubeus) version with brute module:
+```shell
+# with a list of users
+.\Rubeus.exe brute /users:<users_file> /passwords:<passwords_file> /domain:<domain_name> /outfile:<output_file>
+
+# check passwords for all users in current domain
+.\Rubeus.exe brute /passwords:<passwords_file> /outfile:<output_file>
+```
