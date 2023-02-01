@@ -1,6 +1,6 @@
 
 # Attack Privilege Requirements Summary
-- Kerbrute Enumeration
+- Enumeration via PowerView
 	- No domain access required 
 
 - Pass the Ticket
